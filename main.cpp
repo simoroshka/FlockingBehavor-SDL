@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
 
     Agent * pParticles = swarm.getAgents();
 
-    swarm.getNeighbours(&pParticles[0], 20);
+    swarm.getNeighbors(&pParticles[0], 20);
 
     int lastTime = 0;
 
@@ -43,16 +43,14 @@ int main(int argc, char *argv[]) {
 
             unsigned char green, red, blue;
 
-            green = 255;
-            red = 255;
-            blue = 255;
-            /*
-            green = (1 + sin(elapsed * 0.0001)) * 127;
-            red = (1 + sin(elapsed * 0.0002)) * 127;
-            blue = (1 + sin(elapsed * 0.0003)) * 127;
-            */
+
+            green = 150 + (1 + sin(elapsed * 0.001)) * 50;
+            red = 150 + (1 + sin(elapsed * 0.002)) * 50;
+            blue = 150 + (1 + sin(elapsed * 0.003)) * 50;
+
+
             //draw particles
-            for (int i = 0; i < Swarm::NPARTICLES; i++) {
+            for (unsigned int i = 0; i < Swarm::NPARTICLES; i++) {
                 Agent particle = pParticles[i];
 
                 int x = particle.position.x;

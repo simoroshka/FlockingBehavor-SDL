@@ -5,38 +5,33 @@
 #include "Vector2.h"
 #include "Screen.h"
 
-
 namespace mysdl{
 
 class Swarm;
 
 class Agent
 {
-    Swarm static * swarm;
+    Swarm * swarm;
 
-    /*agent config*/
+    /*agents config*/
     double static const max_velocity = 0.08;
     double static const max_acceleration = 0.0002;
 
-    double const Rc = 50;
-    double const Rs = 10;
-    double const Ra = 15;
-    double const Kc = 1;
-    double const Ks = 3;
-    double const Ka = 5;
+    const static double Rc = 50;
+    const static double Rs = 10;
+    const static double Ra = 15;
+    const static double Kc = 1;
+    const static double Ks = 3;
+    const static double Ka = 5;
 
     /*end config*/
 
-    double speed;
-
     void init();
 
-    Vector2 cohesion();    //cohesion behaviour
-    Vector2 separation();  //~
-    Vector2 alignment();   //~
-    Vector2 combine();     //combine all behaviours to get acceleration
-
-
+    Vector2 cohesion() const;    //cohesion behaviour
+    Vector2 separation() const;  //~
+    Vector2 alignment() const;   //~
+    Vector2 combine() const;     //combine all behaviours to get acceleration
 
     public:
         Vector2 position;
@@ -46,7 +41,6 @@ class Agent
         void setSwarm(Swarm*);
 
         void update(int deltaTime);
-        void render();
 
         Agent();
         virtual ~Agent();

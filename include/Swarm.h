@@ -2,7 +2,9 @@
 #define SWARM_H
 #include "Agent.h"
 #include <vector>
+
 namespace mysdl {
+
 class Agent;
 
 class Swarm
@@ -12,16 +14,14 @@ class Swarm
         int lastTime;
 
     public:
-        const static int NPARTICLES = 200;
+        const static unsigned int NPARTICLES = 200;
 
         void update(int elapsed);
-        std::vector<Agent*> getNeighbours(Agent* agent, double radius);
-        Agent * getAgents() {return m_agents;};
-        double sqDistance(double x1, double y1, double x2, double y2);
+        std::vector<Agent*> getNeighbors(const Agent* agent, const double radius);
+        Agent * getAgents() {return m_agents;}
 
         Swarm();
         virtual ~Swarm();
-
 
 };
 } //namespace mysdl

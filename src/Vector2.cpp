@@ -15,7 +15,7 @@ const Vector2 & Vector2::Skew() { x -= y; y += x; x -= y; return *this; }
 
 const Vector2 & Vector2::Normalize()
 {
-    ClumpMagnitude(1);
+    return ClumpMagnitude(1);
 }
 
 const Vector2 & Vector2::ClumpMagnitude(double limit)
@@ -33,8 +33,6 @@ const Vector2 & Vector2::ClumpMagnitude(double limit)
         y *= invLen;
         return *this;
     }
-
-
 }
 
 const Vector2 & Vector2::Truncate(double xMin, double yMin, double xMax, double yMax)
