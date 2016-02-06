@@ -27,24 +27,21 @@ class Agent
 
     /*end config*/
 
-
     double speed;
-
 
     void init();
 
-
-    Vector2* cohesion();    //cohesion behaviour
-    Vector2* separation();  //~
-    Vector2* alignment();   //~
-    Vector2* combine();     //combine all behaviours to get acceleration
+    Vector2 cohesion();    //cohesion behaviour
+    Vector2 separation();  //~
+    Vector2 alignment();   //~
+    Vector2 combine();     //combine all behaviours to get acceleration
 
 
 
     public:
-        Vector2* position;
-        Vector2* velocity;
-        Vector2* acceleration;
+        Vector2 position;
+        Vector2 velocity;
+        Vector2 acceleration;
 
         void setSwarm(Swarm*);
 

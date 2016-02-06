@@ -36,7 +36,7 @@ std::vector<Agent*> Swarm::getNeighbours(Agent* agent, double radius)
 
     for (int i = 0; i < NPARTICLES; i++) {
         if (&m_agents[i] != agent &&
-            Vector2::DistanceSq((*m_agents[i].position), (*agent->position)) < radius*radius)
+            Vector2::DistanceSq(m_agents[i].position, agent->position) < radius*radius)
         {
             neighbors.insert(neighbors.end(), &m_agents[i]);
         }

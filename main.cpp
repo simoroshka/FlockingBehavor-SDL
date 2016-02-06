@@ -43,16 +43,20 @@ int main(int argc, char *argv[]) {
 
             unsigned char green, red, blue;
 
+            green = 255;
+            red = 255;
+            blue = 255;
+            /*
             green = (1 + sin(elapsed * 0.0001)) * 127;
             red = (1 + sin(elapsed * 0.0002)) * 127;
             blue = (1 + sin(elapsed * 0.0003)) * 127;
-
+            */
             //draw particles
             for (int i = 0; i < Swarm::NPARTICLES; i++) {
                 Agent particle = pParticles[i];
 
-                int x = particle.position->x;
-                int y = particle.position->y;
+                int x = particle.position.x;
+                int y = particle.position.y;
 
                 screen.setPixel(x, y, red, green, blue);
             }
@@ -62,7 +66,7 @@ int main(int argc, char *argv[]) {
 
             //check for events
             if (!screen.ProcessEvents()) break;
-            }
+        }
 
     }
 

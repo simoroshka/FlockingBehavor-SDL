@@ -27,6 +27,7 @@ class Screen
         bool ProcessEvents();
         void update();
         void clear();
+        void boxBlur();
         void setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue);
         void close();
 
