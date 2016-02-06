@@ -14,7 +14,6 @@ Swarm::Swarm(): lastTime(0)
 
 }
 
-
 void Swarm::update(int elapsed)
 {
     int deltaTime = elapsed - lastTime;
@@ -27,7 +26,7 @@ void Swarm::update(int elapsed)
 }
 
 
-std::vector<Agent*> Swarm::getNeighbors(const Agent* agent, const double radius)
+std::vector<Agent*> Swarm::getNeighbors(const Agent* agent, const double radius) const
 {
     //returns an array of links to agents that are in a given radius
 

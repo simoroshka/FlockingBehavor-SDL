@@ -17,8 +17,8 @@ class Swarm
         const static unsigned int NPARTICLES = 200;
 
         void update(int elapsed);
-        std::vector<Agent*> getNeighbors(const Agent* agent, const double radius);
-        Agent * getAgents() {return m_agents;}
+        std::vector<Agent*> getNeighbors(const Agent* agent, const double radius) const;
+        Agent * getAgents() const {return m_agents;}
 
         Swarm();
         virtual ~Swarm();
